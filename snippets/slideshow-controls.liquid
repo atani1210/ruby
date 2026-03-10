@@ -80,6 +80,7 @@
       </div>
     {% endif %}
 
+    {% comment %}
     {% if autoplay %}
       <button
         type="button"
@@ -98,6 +99,7 @@
         {{- 'icon-play.svg' | inline_asset_content -}}
       </button>
     {% endif %}
+    {% endcomment %}
 
     {% case style %}
       {% when 'thumbnails' %}
@@ -347,14 +349,13 @@
     list-style: none;
 
     button {
-      --color: rgb(var(--color-foreground-rgb) / var(--opacity-30));
-      --color-active: var(--color-foreground);
+      --color: #ffffff;
+      --color-active: #E10FCA;
       --color-hover: rgb(var(--color-foreground-rgb) / var(--opacity-50));
     }
   }
 
-  slideshow-controls:has(.slideshow-controls__dots),
-  slideshow-component[autoplay] slideshow-controls {
+  slideshow-component[autoplay] slideshow-controls:not(:has(.slideshow-controls__dots)) {
     mix-blend-mode: difference;
   }
 
@@ -365,7 +366,7 @@
     overflow: hidden;
 
     button {
-      --size: 0.56rem;
+      --size: 1rem;
 
       display: flex;
       align-items: center;
