@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//d/work/shopify/ruby/design/home carousel/**)",
+      "Read(//d/work/shopify/ruby/design/**)"
+    ]
+  }
+}
